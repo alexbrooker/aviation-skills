@@ -5,7 +5,7 @@ Agent skills for the [Airside Labs aviation MCP tools](https://airsidelabs.com/t
 screening and airport facts, at `mcp.airsidelabs.com/mcp`.
 
 ```
-npx skills add airsidelabs/aviation-skills
+npx skills add alexbrooker/aviation-skills
 ```
 
 | Skill | For |
@@ -40,6 +40,12 @@ use cases, data sources we should know about, or a tool that would have helped.
 `report_unmet_need` is for the specific case where you looked for something and
 it was not there — an empty result is a real answer, and telling us is how the
 gap gets closed.
+
+## Contributing
+
+Corrections are welcome, particularly to the traps: if one of these skills led
+you to a wrong answer, that is the most useful thing you can tell us. Open an
+issue, or use `submit_suggestion` from the tools themselves.
 
 ## Licence
 
