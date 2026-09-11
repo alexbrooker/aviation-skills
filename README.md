@@ -13,12 +13,20 @@ npx skills add alexbrooker/aviation-skills
 | `aviation-opportunity-map` | Building an AI opportunity map, briefing deck or PRD for an aviation organisation |
 | `aviation-ai-assurance` | Screening a use case against EASA's proposed AI-level and hazard framework |
 | `aviation-identity-check` | Resolving and cross-checking aviation identifiers, with temporal correctness |
+| `aviation-data-story` | Grounding a PRD, data requirements section or test plan in measured findings (exhibits) served with the catalogue |
 
 ## What these are
 
 **Method, not data.** These skills teach an agent how to ask: which tool to reach
 for, in what order, what the vocabulary means, and — mostly — the traps that
 produce a confident wrong answer. The data stays behind the tools.
+
+Exhibits are the one place the data comes forward: a use-case record may carry
+up to three measured, dated findings from Airside Labs' own ADS-B receiver, the
+FAA flight-plan feed, BTS traffic statistics or the served registry, each with
+the exact identifiers to test with and the scope it must not be read past.
+They are static and verified, never live; the `aviation-data-story` skill says
+how to cite them.
 
 That is deliberate. The most valuable thing in this repository is the list of
 ways to get an aviation question wrong: searching capability labels instead of

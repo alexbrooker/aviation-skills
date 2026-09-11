@@ -54,6 +54,16 @@ AL5 / SWAL4 — H4 uses only** — because the training data and design process 
 intractable. If a proposal puts an LLM anywhere near a safety-related function,
 that is the sentence to quote.
 
+**5. Put a measured failure mode next to the hazard.** When the record
+carries an `edge_case` exhibit, quote it beside the screen: a registration
+mark worn by two airframes (N803AL), a Mode-S address heard with its top digit
+lost (G-EJCF on two addresses), a zero-padded flight identifier (EVA031), four
+airframes under one flight number in thirteen days (BAW49). Each is a concrete
+way the AI element's input can be wrong, which is what a hazard argument has
+to reason about, and each comes with the exact identifiers for the test plan.
+Cite the exhibit with its source and window; it is one receiver or one feed on
+one dated edition, not a rate.
+
 ## Reading the levels
 
 Pick by what the system *does* and how much authority the end user keeps.
