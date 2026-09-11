@@ -51,15 +51,15 @@ framework rows. Pull the two or three an argument actually needs. Walking the
 catalogue record by record is the wrong tool and burns your allowance — use the
 aggregates instead.
 
-**4b. Read the exhibits before you write the slide.** A full record may
-carry up to three `exhibits`: measured, dated findings from Airside Labs' own
+**4b. Read the data stories before you write the slide.** A full record may
+carry up to three `data_stories`: measured, dated findings from Airside Labs' own
 ADS-B receiver, the FAA flight-plan feed, BTS traffic statistics or the served
 entity registry, each with a `why_here` written for that use case. Put the
 `claim` on the slide as the finding, the `evidence` table as the chart, and the
 source id and window as the footnote; copy `caveats` and `not_to_be_read_as`
-rather than softening them. Search results carry an `exhibits` count, so when
+rather than softening them. Search results carry a `data_stories` count, so when
 two records read alike take the decorated one. One receiver and three US
-airports are a witness, not a survey: never extend an exhibit past its
+airports are a witness, not a survey: never extend a data story past its
 `applies_when`, and never call it live. The `aviation-data-story` skill covers
 this in depth.
 
@@ -147,5 +147,5 @@ how the gap gets closed for the next person.
 - Counting raw requirement titles as distinct feeds.
 - Fetching dozens of full records when an aggregate answers the question.
 - Presenting a generic one-line use case as though it were a specified one.
-- Quoting an exhibit as an industry statistic or as live data; it is one
+- Quoting a data story as an industry statistic or as live data; it is one
   sensor or one feed, on one dated edition, and its scope is in `applies_when`.

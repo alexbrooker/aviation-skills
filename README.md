@@ -13,7 +13,7 @@ npx skills add alexbrooker/aviation-skills
 | `aviation-opportunity-map` | Building an AI opportunity map, briefing deck or PRD for an aviation organisation |
 | `aviation-ai-assurance` | Screening a use case against EASA's proposed AI-level and hazard framework |
 | `aviation-identity-check` | Resolving and cross-checking aviation identifiers, with temporal correctness |
-| `aviation-data-story` | Grounding a PRD, data requirements section or test plan in measured findings (exhibits) served with the catalogue |
+| `aviation-data-story` | Grounding a PRD, data requirements section or test plan in measured findings (data stories) served with the catalogue |
 
 ## What these are
 
@@ -21,7 +21,7 @@ npx skills add alexbrooker/aviation-skills
 for, in what order, what the vocabulary means, and — mostly — the traps that
 produce a confident wrong answer. The data stays behind the tools.
 
-Exhibits are the one place the data comes forward: a use-case record may carry
+Data stories are the one place the data comes forward: a use-case record may carry
 up to three measured, dated findings from Airside Labs' own ADS-B receiver, the
 FAA flight-plan feed, BTS traffic statistics or the served registry, each with
 the exact identifiers to test with and the scope it must not be read past.
