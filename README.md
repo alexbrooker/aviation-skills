@@ -14,6 +14,7 @@ npx skills add alexbrooker/aviation-skills
 | `aviation-ai-assurance` | Screening a use case against EASA's proposed AI-level and hazard framework |
 | `aviation-identity-check` | Resolving and cross-checking aviation identifiers, with temporal correctness |
 | `aviation-data-story` | Grounding a PRD, data requirements section or test plan in measured findings (data stories) served with the catalogue |
+| `aviation-explain-disruption` | Explaining after the fact why a US flight was late, cancelled or diverted, from dated records: the flight, its aircraft's day, NOTAMs in force and how similar days ended |
 
 ## What these are
 
