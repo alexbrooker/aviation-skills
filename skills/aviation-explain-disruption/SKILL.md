@@ -5,9 +5,10 @@ description: Explain after the fact why a specific US flight was late, cancelled
 
 # Explain a disrupted flight
 
-An explanation here is assembled from four dated records, each saying one
-thing: what the flight did, what its aircraft had been doing, what was
-restricted at the airport, and how similar days ended. None of them is live.
+An explanation here is assembled from five dated records, each saying one
+thing: what the flight did, what its aircraft had been doing, what the weather
+and the FAA Command Center were doing at the airport, what was restricted
+there, and how similar days ended. None of them is live.
 The skill is the order to ask in, and the claims the records do not support.
 
 Needs the Airside Labs aviation tools (`mcp.airsidelabs.com/mcp`).
@@ -18,6 +19,7 @@ Needs the Airside Labs aviation tools (`mcp.airsidelabs.com/mcp`).
 |---|---|---|---|---|
 | `flight_departure_lookup` | Airside Labs' capture of the FAA flight feed | Departures from JFK and Newark from 13 Aug 2026, Seattle from 16 Sep 2026 | When the flight took off (UTC), on which registration and type, to where | Anything about other departure airports |
 | `disruption_precedents` | US DOT on-time record | US domestic flights of the large reporting carriers, July 2024 to two or three months ago | Minutes late, the carrier's own cause attribution, the aircraft's other legs, how bad days ended | An airport's total traffic; why a diversion happened |
+| `airport_conditions` | IEM ASOS METARs + FAA ATCSCC advisories | US airports, 1 Jul to 31 Aug 2026 (the answer's `provenance` gives the days held) | Ground Delay Programmes, Ground Stops, impacting condition (weather/volume/staffing/equipment), ceilings, wind, thunderstorms | What caused a specific carrier's coded minutes |
 | `notam_search` | Airside Labs' capture of the FAA NOTAM feed | Daily from 12 Jul 2026, full volume from 30 Sep 2026 | Which notices were in force at a place and time | That a notice caused anything |
 
 The windows overlap only partly. Say which record an answer comes from, and
@@ -53,10 +55,13 @@ Read the flight's own leg: `departure_minutes_late`,
 (above zero, the aircraft landed after this flight was due to leave). Check the
 `registration` is the one step 2 gave.
 
-**4. Read what was restricted at the airport at the scheduled time.**
+**4. Check weather, FAA traffic management programmes, and NOTAMs at both origin and destination.**
 
+    airport_conditions("KEWR", date="<local date>")
     notam_search("KEWR", at="<scheduled departure, UTC>")
     notam_coverage("KEWR")                -> how complete the capture was that day
+
+Read `programmes` first in `airport_conditions` (GDPs, Ground Stops, `impacting_condition` and `period_utc`), then `weather.summary`. Check the destination airport too: a programme at the destination holds flights at their origin. If `status` is `not_covered`, say the date is outside the conditions archive rather than assuming clear weather.
 
 **5. Ask whether the day was unusual, and how days like it went.**
 
@@ -115,6 +120,12 @@ disruption_precedents(kind="aircraft_day", flight="UA2815", like_date="2026-08-2
      minutes after its scheduled departure. Carrier attribution: weather
      425, late aircraft 58.
 
+airport_conditions("KEWR", date="2026-08-27")
+   → 4 programmes, all WEATHER / THUNDERSTORMS: ground stops from 11:32Z,
+     13:59Z and 19:02Z, and a ground delay programme from 15:00Z to 05:59Z
+     the next day. 21 of 47 weather reports carried thunderstorms, 12:41Z
+     to 21:51Z.
+
 notam_search("KEWR", at="2026-08-27T20:00:00Z")
    → 14 in force, among them RWY 11/29 CLSD, 11:07Z to 21:00Z.
      Capture warning: about half volume before 30 Sep 2026.
@@ -135,13 +146,17 @@ The explanation:
 > taking off at 00:43 the next morning. United attributed 425 of those minutes
 > to weather and 58 to the aircraft arriving late: the same aircraft, N27511,
 > had come in from Miami 92 minutes behind schedule, landing after UA2815 was
-> due to leave. It was a bad day at Newark. A third of reporting-carrier
+> due to leave. It was a bad day at Newark. The FAA Command Center held the
+> airport under ground stops and a ground delay programme for thunderstorms
+> from 11:32Z into the night. A third of reporting-carrier
 > departures were cancelled, most coded as weather or air traffic system, and
 > runway 11/29 was closed by NOTAM from 11:07Z to 21:00Z. Newark was back under
 > 5% cancelled the next day; of 21 weather-coded disruptions there between
 > July 2024 and August 2026, 14 cleared within two days.
 > Sources: US DOT BTS on-time performance, edition 2026-08 (reporting carriers
-> only; causes are the carrier's own); Airside Labs' historic capture of the
+> only; causes are the carrier's own); FAA Command Center advisories and
+> archived METARs (Iowa Environmental Mesonet), 1 July to 31 August 2026;
+> Airside Labs' historic capture of the
 > FAA flight and NOTAM feeds (not for operational use, not endorsed by the FAA;
 > NOTAM capture partial before 30 September 2026).
 
