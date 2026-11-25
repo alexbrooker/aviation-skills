@@ -13,7 +13,7 @@ Needs the Airside Labs aviation tools (`mcp.airsidelabs.com/mcp`).
 ## The one thing to get right before anything else
 
 **A screen is not a determination.** The `ai_level` and `hazard_class` on a use
-case are Airside Labs' assessment — a title-level pass with a confidence, made to
+case are Airside Labs' assessment: a title-level pass with a confidence, made to
 sort a portfolio. A real classification needs a ConOps and a per-application
 hazard assessment, and no table can supply either.
 
@@ -35,7 +35,7 @@ block carrying the matching rows with their `cp_ref` page.
 **2. Read it against the tables.** `easa_ai_framework()` returns the AI levels,
 the hazard classes, the technique ceilings and the source notes. Pass `level` or
 `hazard_class` for one row. Use it to explain what 1B/H3 *means* before proposing
-a system — most readers will not know, and a level quoted without its definition
+a system: most readers will not know, and a level quoted without its definition
 is jargon.
 
 **3. Cite the page, not the tool.** Every row carries `cp_ref`. That is the
@@ -43,14 +43,14 @@ citation. Quote it.
 
 Be aware the `cp_ref` values are not uniform: the AI-level table sits around
 pp. 33-34 with a second treatment around pp. 196-208, and different levels cite
-different anchors — 1A gives both, 1B gives only the annex. If you cite several
+different anchors: 1A gives both, 1B gives only the annex. If you cite several
 levels in one document they will look inconsistent. Say which page you read each
 from rather than implying one table.
 
 **4. Check the technique ceiling if a technique is named.** The framework caps
 which techniques are acceptable to which assurance level. The one that catches
 people: **large off-the-shelf models (general-purpose LLMs) ceiling at IDAL D /
-AL5 / SWAL4 — H4 uses only** — because the training data and design process are
+AL5 / SWAL4, H4 uses only**, because the training data and design process are
 intractable. If a proposal puts an LLM anywhere near a safety-related function,
 that is the sentence to quote.
 
@@ -81,7 +81,7 @@ Pick by what the system *does* and how much authority the end user keeps.
 Most detection, prediction and monitoring systems are **1A**. A recommender that
 puts options in front of a person is **1B**. Something that acts and is
 cross-checked is **2A**. Do not inflate a monitor into a 2A because it sounds
-more advanced — the level is about authority, not sophistication.
+more advanced: the level is about authority, not sophistication.
 
 ## Reading the hazard classes
 
@@ -90,7 +90,7 @@ system feels.
 
 | Class | Worst credible effect | Assurance at acceptable risk |
 |---|---|---|
-| H5 | No possible impact on end users or public | AL6 — not a safety component under Reg. (EU) 2024/1689 |
+| H5 | No possible impact on end users or public | AL6; not a safety component under Reg. (EU) 2024/1689 |
 | H4 | Slight performance degradation or slight workload increase | AL5/TQL5 |
 | H3 | Significant degradation, potentially impacting safety-critical operations | AL3/TQL3 |
 | H2 | Potential serious injury; large degradation | AL2/TQL2 |
@@ -98,7 +98,7 @@ system feels.
 
 Reason about the actual failure mode, and about what else would have to fail. A
 tow-route recommender that could in principle route onto a runway still has ATC
-clearance and lighted stop bars between it and a collision — that is H3, not H1.
+clearance and lighted stop bars between it and a collision: that is H3, not H1.
 Ask what barriers remain, and say which ones you are relying on.
 
 Two errors to avoid in equal measure: marking everything H4 out of caution, and

@@ -1,6 +1,6 @@
 ---
 name: aviation-data-story
-description: Ground a PRD, data requirements section, test plan or briefing in measured aviation data findings ("data_stories") served with the Airside Labs use-case catalogue — what ADS-B, FAA flight-plan, BTS traffic and registry data actually does when touched. Use when asked what a data source really gives you, which identifier traps to test for, how to size a feed, or to put evidence next to a use case without overstating it. Uses the Airside Labs aviation MCP tools.
+description: Ground a PRD, data requirements section, test plan or briefing in measured aviation data findings ("data_stories") served with the Airside Labs use-case catalogue: what ADS-B, FAA flight-plan, BTS traffic and registry data actually does when touched. Use when asked what a data source really gives you, which identifier traps to test for, how to size a feed, or to put evidence next to a use case without overstating it. Uses the Airside Labs aviation MCP tools.
 ---
 
 # Aviation data stories: evidence next to the use case
@@ -39,7 +39,7 @@ Read the structured fields first; the narrative is last on purpose.
 | `caveats`, `not_to_be_read_as` | What it does not show | Copy them; do not soften them |
 | `sources` | Source id, edition, window | The citation |
 
-Cite as: *source id, edition, window* — "Airside Labs receiver station R1,
+Cite as *source id, edition, window*, for example "Airside Labs receiver station R1,
 edition 2026-09, 28 Aug to 10 Sep 2026". Never as "live data".
 
 ## The sequence
@@ -79,13 +79,13 @@ rate, say that the data story does not supply it.
 - Calling any of it live. The data behind a data story was measured once, by a
   probe, on a dated edition. The server does not query it.
 
-## Worked example — a dispatcher's flight-watch feature
+## Worked example: a dispatcher's flight-watch feature
 
 Brief: *build the "which airframe is on this flight" panel for an OCC.*
 
 ```
 search_use_cases(query="tail assignment flight plan dispatch")
-   → two records carry data stories; take those.
+   → some records carry a `data_stories` count; take those.
 
 get_use_case(<id>)
    → data stories:
