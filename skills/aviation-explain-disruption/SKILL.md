@@ -1,6 +1,6 @@
 ---
 name: aviation-explain-disruption
-description: Explain after the fact why a specific US flight was late, cancelled or diverted, using what the flight actually did, where its aircraft had been that day, what was restricted at the airport and how days like it went before. Use for a passenger, a manager or a post-event review, or to put dated precedent beside a decision about a bad day. Historic records only — not live, not a forecast, not for operational use. Uses the Airside Labs aviation MCP tools.
+description: Explain after the fact why a specific US flight was late, cancelled or diverted, using what the flight actually did, where its aircraft had been that day, what was restricted at the airport and how days like it went before. Use for a passenger, a manager or a post-event review, or to put dated precedent beside a decision about a bad day. Historic records only: not live, not a forecast, not for operational use. Uses the Airside Labs aviation MCP tools.
 ---
 
 # Explain a disrupted flight
@@ -98,7 +98,7 @@ like; how similar days ended; the sources with their windows.
   Airside Labs and not endorsed by the FAA; the on-time record is not endorsed
   by BTS or DOT. Say so when you quote them.
 
-## Worked example — United 2815, Newark to Houston, 27 August 2026
+## Worked example: United 2815, Newark to Houston, 27 August 2026
 
 Scheduled 15:59 local. It left the gate at 00:07 the next morning.
 
